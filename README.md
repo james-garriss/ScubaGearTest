@@ -80,36 +80,56 @@ If you receive a warning that _The required supporting PowerShell modules are no
 ```powershell
 Initialize-SCuBA # Installs the minimum required dependencies
 ```
-> **IMPORTANT**: The `Install-OPA` cmdlet is called by default when running `Initialize-SCuBA`. The `Install-OPA` cmdlet can also be run by itself to download the executable.
+
+> **IMPORTANT**: The `Install-OPA` cmdlet is called by default when running `Initialize-SCuBA`. 
+
+The `Install-OPA` cmdlet can also be run by itself to download the executable.
 In the event of an unsuccessful download, users can manually download the OPA executable with the following steps:
 1. Go to OPA download site (https://www.openpolicyagent.org/docs/latest/#running-opa)
 2. Check the acceptable OPA version (Currently v0.61.0) for ScubaGear and select the corresponding version on top left of the website
 3. Navigate to the menu on left side of the screen: Introduction - Running OPA - Download OPA
 4. Locate the downloaded file, add the file to your desired location (default is ~\\.scubagear\Tools), open PowerShell, and use the following command to check the downloaded OPA version
+
 ```powershell
 .\opa_windows_amd64.exe version
 ```
 
 ### Examples
 
-#### Example 1: Run an assessment against all products (except PowerPlatform) <!-- omit in toc -->
+#### Example 1
+
+Run an assessment against all products (except PowerPlatform) <!-- omit in toc -->
+
 ```powershell
 Invoke-SCuBA
 ```
-#### Example 2: Run an assessment against Azure Active Directory with custom report output location <!-- omit in toc -->
+
+#### Example 2
+
+Run an assessment against Azure Active Directory with custom report output location <!-- omit in toc -->
+
 ```powershell
 Invoke-SCuBA -ProductNames aad -OutPath C:\Users\johndoe\reports
 ```
-#### Example 3: Run assessments against multiple products <!-- omit in toc -->
+
+#### Example 3: 
+
+Run assessments against multiple products <!-- omit in toc -->
+
 ```powershell
 Invoke-SCuBA -ProductNames aad, sharepoint, teams
 ```
-#### Example 4: Run assessments non-interactively using an application service principal and authenticating via CertificateThumbprint <!-- omit in toc -->
+
+#### Example 4: 
+
+Run assessments non-interactively using an application service principal and authenticating via CertificateThumbprint <!-- omit in toc -->
+
 ```powershell
 Invoke-SCuBA -ProductNames * -CertificateThumbprint "<insert-thumbprint>" -AppID "<insert-appid>" -Organization tenant.onmicrosoft.com
 ```
 
 To view more examples and see detailed help run:
+
 ```powershell
 Get-Help -Name Invoke-SCuBA -Full
 ```
