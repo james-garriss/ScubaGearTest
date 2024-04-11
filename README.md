@@ -100,7 +100,7 @@ In the event of an unsuccessful download, users can manually download the OPA ex
 
 #### Example 1
 
-Run an assessment against all products (except PowerPlatform) <!-- omit in toc -->
+Run an assessment against all products (except PowerPlatform):
 
 ```powershell
 Invoke-SCuBA
@@ -108,23 +108,23 @@ Invoke-SCuBA
 
 #### Example 2
 
-Run an assessment against Azure Active Directory with custom report output location <!-- omit in toc -->
+Run an assessment against Azure Active Directory with custom report output location:
 
 ```powershell
 Invoke-SCuBA -ProductNames aad -OutPath C:\Users\johndoe\reports
 ```
 
-#### Example 3: 
+#### Example 3
 
-Run assessments against multiple products <!-- omit in toc -->
+Run assessments against multiple products:
 
 ```powershell
 Invoke-SCuBA -ProductNames aad, sharepoint, teams
 ```
 
-#### Example 4: 
+#### Example 4
 
-Run assessments non-interactively using an application service principal and authenticating via CertificateThumbprint <!-- omit in toc -->
+Run assessments non-interactively using an application service principal and authenticating via CertificateThumbprint:
 
 ```powershell
 Invoke-SCuBA -ProductNames * -CertificateThumbprint "<insert-thumbprint>" -AppID "<insert-appid>" -Organization tenant.onmicrosoft.com
