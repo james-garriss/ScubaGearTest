@@ -43,8 +43,7 @@ Some of the policy checks in the baseline rely on the following licenses which a
 
 If a tenant does not have the licenses listed above, the report will display a non-compliant output for those policies.
 
-> [!NOTE]
-> DOD endpoints are included, but have not been tested. Please open an issue if you encounter bugs.
+> **NOTE**: DOD endpoints are included, but have not been tested. Please open an issue if you encounter bugs.
 
 ## Getting Started
 
@@ -66,8 +65,7 @@ Windows clients with an execution policy of `Unrestricted` generate a warning ab
 ScubaGear can be invoked interactively or non-interactively. See [Required Permissions](#required-permissions) for the permissions needed to execute the tool in either mode. The interactive authentication mode will prompt the user for credentials via Microsoft's popup windows. Non-interactive mode is for invoking ScubaGear using an Azure AD application service principal and supports running the tool in automated scenarios such as pipelines or scheduled jobs. Examples 1-3 provide examples for running with interactive mode and example 4 provides an example for running in non-interactive mode.
 
 ### Importing the module
-> [!NOTE]
->  Only PowerShell 5.1 is currently supported. PowerShell 7 may work, but has not been tested. Full PowerShell 7 support will be added in a future release.
+> **NOTE**: Only PowerShell 5.1 is currently supported. PowerShell 7 may work, but has not been tested. Full PowerShell 7 support will be added in a future release.
 
 ScubaGear currently must be imported into each new PowerShell terminal session to execute.
 To import the module, navigate to the repository folder in a PowerShell 5.1 terminal.
@@ -323,8 +321,7 @@ The process to configure the application permissions is sometimes referred to as
 
 Microsoft Graph is used, because Azure AD PowerShell is being deprecated.
 
-> [!NOTE]
-> Microsoft Graph PowerShell SDK appears as "unverified" on the AAD application consent screen. This is a [known issue](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/482).
+> **NOTE**: Microsoft Graph PowerShell SDK appears as "unverified" on the AAD application consent screen. This is a [known issue](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/482).
 
 The following API permissions are required for Microsoft Graph Powershell:
 
