@@ -4,7 +4,9 @@
         <img src="https://img.shields.io/badge/ScubaGear-v1.2.0-%2328B953?labelColor=%23005288" /></a>
 </p>
 
-Developed by CISA, ScubaGear is an assessment tool that verifies a Microsoft 365 (M365) tenant’s configuration conforms to the policies described in the Secure Cloud Business Applications ([SCuBA](https://cisa.gov/scuba)) Security Configuration Baseline [documents](https://github.com/cisagov/ScubaGear/tree/main/baselines).
+Developed by CISA, ScubaGear is an assessment tool that verifiesthat  a Microsoft 365 (M365) tenant’s configuration conforms to the policies described in the Secure Cloud Business Applications ([SCuBA](https://cisa.gov/scuba)) Security Configuration Baseline [documents](https://cisagov.github.io/ScubaGear/baselines).
+
+> **NOTE**: This documentation can be read using [GitHub Pages](https://cisagov.github.io/ScubaGear).
 
 ## Table of Contents <!-- omit in toc -->
 - [M365 Product License Assumptions](#m365-product-license-assumptions)
@@ -85,10 +87,10 @@ Initialize-SCuBA # Installs the minimum required dependencies
 
 The `Install-OPA` cmdlet can also be run by itself to download the executable.
 In the event of an unsuccessful download, users can manually download the OPA executable with the following steps:
-1. Go to OPA download site (https://www.openpolicyagent.org/docs/latest/#running-opa)
-2. Check the acceptable OPA version (Currently v0.61.0) for ScubaGear and select the corresponding version on top left of the website
+1. Go to [OPA download site](https://www.openpolicyagent.org/docs/latest/#running-opa).
+2. Check the acceptable OPA version (Currently v0.61.0) for ScubaGear and select the corresponding version on top left of the website.
 3. Navigate to the menu on left side of the screen: Introduction - Running OPA - Download OPA
-4. Locate the downloaded file, add the file to your desired location (default is ~\\.scubagear\Tools), open PowerShell, and use the following command to check the downloaded OPA version
+4. Locate the downloaded file, add the file to your desired location (default is ~\\.scubagear\Tools), open PowerShell, and use the following command to check the downloaded OPA version:
 
 ```powershell
 .\opa_windows_amd64.exe version
@@ -266,7 +268,7 @@ The ScubaGear `-ConfigFilePath` command line option allows users to define custo
 
 **YAML AAD Configuration File Syntax and Examples**
 
-**Aad** defines the AAD specific variables to specify user, group, and role exclusions that are documented exemptions to select conditional access policies (CAP) in the AAD configuration policy baselines. Users, groups, and roles are specified by their respective Universally Unique Identifier (UUID) in the tenant. This variable set is only needed if the agency has documented CAP exemptions.
+**AAD** - Defines the AAD specific variables to specify user, group, and role exclusions that are documented exemptions to select conditional access policies (CAP) in the AAD configuration policy baselines. Users, groups, and roles are specified by their respective Universally Unique Identifier (UUID) in the tenant. This variable set is only needed if the agency has documented CAP exemptions.
 
 **CapExclusions** - Supports both a Users and Groups list with each entry representing the UUID of a user or group that is approved by the agency to be included in a conditional access policy assignment exclusion. Adding an entry to this variable will prevent ScubaGear from failing the policy assessment due to the presence of the users and groups in an exclusion.
 
@@ -412,7 +414,8 @@ ScubaGear creates connections to several M365 services. If running against multi
 ```powershell
 Disconnect-SCuBATenant
 ```
-> The cmdlet will attempt to disconnect from all services regardless of current session state.  Only connections established within the current PowerShell session will be disconnected and removed.  Services that are already disconnected will not generate an error.
+
+The cmdlet will attempt to disconnect from all services regardless of current session state.  Only connections established within the current PowerShell session will be disconnected and removed.  Services that are already disconnected will not generate an error.
 
 ### Errors connecting to Defender
 If when running the tool against Defender (via ExchangeOnlineManagement PowerShell Module), you may see the connection error "Create Powershell Session is failed using OAuth" in the Powershell window, follow the instructions in this section. An example of the full error message is provided below.
@@ -544,7 +547,8 @@ ScubaGear requires a number of PowerShell modules to function. A user or develop
 .\UninstallModules.ps1
 ```
 
->PowerShellGet 2.x has a known issue uninstalling modules installed on a OneDrive path that may result in an "Access to the cloud file is denied" error.  Installing PSGet 3.0, currently in beta, will allow the script to successfully uninstall such modules or you can remove the modules files from OneDrive manually.
+PowerShellGet 2.x has a known issue uninstalling modules installed on a OneDrive path that may result in an "Access to the cloud file is denied" error.  Installing PSGet 3.0, currently in beta, will allow the script to successfully uninstall such modules or you can remove the modules files from OneDrive manually.
 
 ## Project License
+
 Unless otherwise noted, this project is distributed under the Creative Commons Zero license. With developer approval, contributions may be submitted with an alternate compatible license. If accepted, those contributions will be listed herein with the appropriate license.
