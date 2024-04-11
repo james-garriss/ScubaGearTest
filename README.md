@@ -80,8 +80,7 @@ If you receive a warning that _The required supporting PowerShell modules are no
 ```powershell
 Initialize-SCuBA # Installs the minimum required dependencies
 ```
-> [!IMPORTANT]
-> The `Install-OPA` cmdlet is called by default when running `Initialize-SCuBA`. The `Install-OPA` cmdlet can also be run by itself to download the executable.
+> **IMPORTANT**: The `Install-OPA` cmdlet is called by default when running `Initialize-SCuBA`. The `Install-OPA` cmdlet can also be run by itself to download the executable.
 In the event of an unsuccessful download, users can manually download the OPA executable with the following steps:
 1. Go to OPA download site (https://www.openpolicyagent.org/docs/latest/#running-opa)
 2. Check the acceptable OPA version (Currently v0.61.0) for ScubaGear and select the corresponding version on top left of the website
@@ -90,6 +89,7 @@ In the event of an unsuccessful download, users can manually download the OPA ex
 ```powershell
 .\opa_windows_amd64.exe version
 ```
+
 ### Examples
 
 #### Example 1: Run an assessment against all products (except PowerPlatform) <!-- omit in toc -->
