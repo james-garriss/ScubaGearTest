@@ -1,5 +1,3 @@
-# ScubaGear New Test
-
 ![CISA Logo](/docs/images/cisa.png)
 
 <p>
