@@ -1,5 +1,3 @@
-# ScubaGear
-
 ![CISA Logo](/docs/images/cisa.png)
 
 <a href="https://github.com/cisagov/ScubaGear/releases" alt="ScubaGear version #">
